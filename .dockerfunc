@@ -85,3 +85,39 @@ pulseaudio(){
 		--name pulseaudio \
 		jess/pulseaudio
 }
+rygel(){
+    local musicpath="$HOME/Music"
+    local videopath="$HOME/Videos"
+    local picspath="$HOME/Pictures"
+    local OPTIND m v p o
+    
+    while getopts ":m:v:p:" o; do
+        case $o in
+            m)
+                musicpath=$OPTARG
+                ;;
+            v)
+                videopath=$OPTARG
+                ;;
+            p)
+                picspath=$OPTARG
+                ;;
+        esac
+    done
+    shift $((OPTIND-1))
+    # echo "videopath set is $videopath."
+    # echo "picspath set is $picspath."
+    # echo "musicpath set is $musicpath."
+    
+    del_stopped rygel
+    
+    docker run \
+        -it \
+        --rm \
+        --net=host \
+        -v $musicpath:/music \
+        -v $videopath:/videos \
+        -v $picspath:/pictures \
+        --name rygel \
+        sameersbn/rygel:latest
+}
