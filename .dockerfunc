@@ -34,7 +34,7 @@ torproxy(){
 	del_stopped torproxy
 
 	docker run -d \
-		--restart always \
+		# --restart always \
 		-v /etc/localtime:/etc/localtime:ro \
 		-p 9050:9050 \
 		--name torproxy \
@@ -47,7 +47,7 @@ privoxy(){
 	relies_on torproxy
 
 	docker run -d \
-		--restart always \
+		# --restart always \
 		--link torproxy:torproxy \
 		-v /etc/localtime:/etc/localtime:ro \
 		-p 8118:8118 \
