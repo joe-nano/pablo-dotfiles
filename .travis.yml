@@ -1,0 +1,9 @@
+language: bash
+
+before_script:
+    - mkdir testHome
+    - export HOME="$PWD/testHome"
+
+script:
+    - bash -c "$(wget -qO - https://raw.github.com/msis/dotfiles/master/install.sh)"
+

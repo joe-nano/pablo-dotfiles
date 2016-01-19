@@ -1,5 +1,6 @@
 [Mohamed Saad IBN SEDDIK's](https://github.com/msis) Linux .files
 =================================================================
+[![Build Status](https://travis-ci.org/msis/dotfiles.svg?branch=master)](https://travis-ci.org/msis/dotfiles)
 
 Dotfiles to quickly configure your system. 
 
