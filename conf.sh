@@ -37,7 +37,7 @@ set_conf_files() {
     for i in "${FILES_TO_SYMLINK[@]}"; do
 
         sourceFile="$(pwd)/$i"
-        targetFile="$HOME/.$(printf "%s" "$i" | sed "s/\<bash\>//g" )" #if in the bash folder, remove the bash folder when creating link
+        targetFile="$HOME/.$(printf "%s" "$i" | sed -e "s/\<bash\>//g"  -e "s/\<git\>//g" )" #if in the bash | git folder, remove the bash folder when creating link
 
         if [ ! -e "$targetFile" ]; then
             execute "ln -fs $sourceFile $targetFile" "$targetFile → $sourceFile"
