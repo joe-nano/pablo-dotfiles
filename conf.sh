@@ -17,9 +17,9 @@ declare -a FILES_TO_SYMLINK=(
     'i3/config'
     'i3/status.conf'
 
-    'git/.gitattributes'
+    # 'git/.gitattributes'
     'git/.gitconfig'
-    'git/.gitignore'
+    # 'git/.gitignore'
 
 )
 
