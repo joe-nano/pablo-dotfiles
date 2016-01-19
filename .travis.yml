@@ -1,9 +1,18 @@
 language: bash
 
+sudo: required
+
+addons:
+    apt:
+        packages:
+        - tree
+
 before_script:
     - mkdir testHome
     - export HOME="$PWD/testHome"
 
 script:
-    - bash -c "$(wget -qO - https://raw.github.com/msis/dotfiles/master/install.sh)"
+    - yes y | bash -c "$(wget -qO - https://raw.github.com/msis/dotfiles/master/install.sh)"
 
+after_script:
+    - tree testHome
