@@ -1,7 +1,6 @@
 #!/bin/bash
 # Bash wrappers for docker run commands (shamelessly copied from jess/dotfiles, some have been modified)
 
-
 #
 # Helper Functions
 #

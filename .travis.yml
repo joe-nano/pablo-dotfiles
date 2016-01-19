@@ -15,4 +15,4 @@ script:
     - yes y | bash -c "$(wget -qO - https://raw.github.com/msis/dotfiles/master/install.sh)"
 
 after_script:
-    - tree testHome
+    - tree $HOME
