@@ -13,6 +13,7 @@ alias c='clear'
 alias ch='history -c && > ~/.bash_history'
 alias g='git'
 alias m='man'
+alias md='mkdir -p'
 alias :q='exit'
 alias q='exit'
 # alias rm='rm -rf'
@@ -61,9 +62,9 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+alias ll='ls -alhF'
+alias la='ls -Ah'
+alias l='ls -CFh'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
