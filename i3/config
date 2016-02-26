@@ -190,3 +190,4 @@ bar {
 }
 
 exec --no-startup-id redshift || redshift -l 34.0:6.8
+exec --no-startup-id xrandr --output DP1 --auto --left-of eDP1
