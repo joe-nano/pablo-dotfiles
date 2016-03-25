@@ -13,7 +13,7 @@ declare -a FILES_TO_SYMLINK=(
     'bash/.bash_prompt'
     'bash/.bashrc'
     'bash/.inputrc'
-    
+
     'i3/config'
     'i3/status.conf'
 
@@ -21,6 +21,8 @@ declare -a FILES_TO_SYMLINK=(
     'git/.gitconfig'
     # 'git/.gitignore'
 
+    'atom/keymap.cson'
+    'atom/snippets.cson'
 )
 
 set_conf_files() {
@@ -57,7 +59,7 @@ set_conf_files() {
 }
 
 main() {
-    
+
     # configuration files
     ask_for_confirmation "Do you want to set the configuration files?"
     printf '\n'
@@ -67,7 +69,7 @@ main() {
     fi
 
     ask_for_sudo
-    
+
     # recommanded packages
     ask_for_confirmation "Do you want to install the recommanded packages?"
 
