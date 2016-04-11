@@ -189,3 +189,4 @@ bar {
         tray_output primary
 }
 
+exec --no-startup-id syndaemon -i .5 -K -d 
