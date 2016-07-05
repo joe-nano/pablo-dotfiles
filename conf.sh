@@ -57,6 +57,11 @@ declare -a SETTINGS_TO_COPY=(
 
     'etc/wpa_supplicant/wpa_supplicant.conf'
 
+    'etc/hostname'
+    'etc/hosts'
+
+    'etc/sudoers.d/10_student'
+
 )
 
 copy_settings_files() {
