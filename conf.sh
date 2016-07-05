@@ -28,8 +28,6 @@ set_conf_files() {
     local sourceFile=''
     local targetFile=''
 
-    mkd $HOME/.i3
-
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     for i in "${FILES_TO_SYMLINK[@]}"; do
@@ -55,6 +53,42 @@ set_conf_files() {
 
 }
 
+declare -a SETTINGS_TO_COPY=(
+
+    'etc/wpa_supplicant/wpa_supplicant.conf'
+
+)
+
+copy_settings_files() {
+
+    local i=''
+    local sourceFile=''
+    local targetFile=''
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    for i in "${SETTINGS_TO_COPY[@]}"; do
+
+        sourceFile="$(pwd)/$i"
+        targetFile="/$(printf "%s" "$i")"
+
+        if [ ! -e "$targetFile" ]; then
+            execute "sudo cp $sourceFile $targetFile" "$targetFile → $sourceFile"
+        elif [ "$targetFile" == "$sourceFile" ]; then
+            print_success "$targetFile → $sourceFile"
+        else
+            ask_for_confirmation "'$targetFile' already exists, do you want to overwrite it?"
+            if answer_is_yes; then
+                mv "$targetFile" "$targetFile".old
+                execute "sudo cp $sourceFile $targetFile" "$targetFile → $sourceFile"
+            else
+                print_error "$targetFile → $sourceFile"
+            fi
+        fi
+
+    done
+}
+
 main() {
 
     # configuration files
@@ -73,6 +107,14 @@ main() {
     if answer_is_yes; then
         ./os/install_packages.sh
     fi
+
+    # settings files
+    ask_for_confirmation "Do you want to install the settings files?"
+
+    if answer_is_yes; then
+        copy_settings_files
+    fi
+
 }
 
 main
