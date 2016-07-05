@@ -13,16 +13,13 @@ declare -a FILES_TO_SYMLINK=(
     'bash/.bash_prompt'
     'bash/.bashrc'
     'bash/.inputrc'
-
-    'i3/config'
-    'i3/status.conf'
+    'bash/.bash.local'
 
     # 'git/.gitattributes'
     'git/.gitconfig'
-    # 'git/.gitignore'
+    'git/.gitconfig.local'
+    'git/.gitignore'
 
-    'atom/keymap.cson'
-    'atom/snippets.cson'
 )
 
 set_conf_files() {

@@ -1,7 +1,7 @@
 #!/bin/bash
-declare -r GITHUB_REPO="msis/dotfiles"
+declare -r GITHUB_REPO="moos-ivp/pablo-dotfiles"
 
-if ! (command -v 'git' &> /dev/null); then 
+if ! (command -v 'git' &> /dev/null); then
 
     sudo apt-get install git-core -y
 
@@ -10,4 +10,4 @@ fi
 git clone https://github.com/$GITHUB_REPO ~/.dotfiles
 cd ~/.dotfiles
 
-bash conf.sh 
+bash conf.sh

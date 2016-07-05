@@ -1,13 +1,12 @@
-[Mohamed Saad IBN SEDDIK's](https://github.com/msis) Linux .files
-=================================================================
-[![Build Status](https://travis-ci.org/msis/dotfiles.svg?branch=master)](https://travis-ci.org/msis/dotfiles)
+PABLO ([Payload Autonomy Box](http://oceanai.mit.edu/pavlab/pmwiki/pmwiki.php?n=PavLab.Pablo)) Linux .files
+====================================================================================================
 
-Dotfiles to quickly configure your system. 
+Dotfiles to quickly configure a new PABLO box.
 
 # Setup
 In a terminal, type:
 ```bash
-bash -c "$(wget -qO - https://raw.github.com/msis/dotfiles/master/install.sh)"
+bash -c "$(wget -qO - https://raw.github.com/moos-ivp/pablo-dotfiles/master/install.sh)"
 ```
 
 # Personal Settings
@@ -32,12 +31,6 @@ export PATH
 
 alias g="git"
 ```  
-
-# Acknowledgments
-This dotfiles are inspired from :
-- [Jessie Frazelle](https://github.com/jfrazelle) [dotfiles](https://github.com/jfrazelle/dotfiles).
-- [Cătălin Mariș](https://github.com/alrra) [dotfiles](https://github.com/alrra/dotfiles).
-- [Nicolas Besnard](https://github.com/nicolas-besnard) [dotfiles](https://github.com/nicolas-besnard/linux-dotfiles).
 
 # License
 See the [`LICENSE`](LICENSE) file.
